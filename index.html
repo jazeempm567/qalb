@@ -7,7 +7,7 @@
     <meta name="keywords" content="Gym, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Qalb Spa | Massage Center in ajman</title>
+    <title>Qalb Spa | Massage Center in Ajman</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -16,8 +16,6 @@
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
-
     <link rel="stylesheet" href="css/flaticon.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/barfiller.css" type="text/css">
@@ -26,7 +24,72 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <style>
         .cs-item .fa {
-            font-size: 2em; /* Makes the icons larger */
+            font-size: 2em;
+        }
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 10000; /* Ensure popup is above all other content */
+        }
+        .popup {
+            width: 600px;
+            height: 600px;
+            background: url('img/popup.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            padding: 20px;
+            border-radius: 20px;
+            border: 2px solid #f36100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+        .buttons {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .hidden {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 767px) {
+            .popup {
+                width: 90%;
+                height: 350px;
+                padding: 15px;
+            }
+
         }
     </style>
 </head>
@@ -40,28 +103,24 @@
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
-        <div class="canvas-close">
+        <!-- <div class="canvas-close">
             <i class="fa fa-close"></i>
         </div>
         <div class="canvas-search search-switch">
             <i class="fa fa-search"></i>
-        </div>
+        </div> -->
         <nav class="canvas-menu mobile-menu">
             <ul>
                 <li><a href="./index.html">Home</a></li>
-                <!-- <li><a href="./about-us.html">About Us</a></li>
-                <li><a href="./classes.html">Classes</a></li>
-                <li><a href="./services.html">Services</a></li> -->
                 <li><a href="./team.html">Our Staffs</a></li>
-            
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="canvas-social">
             <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-youtube-play"></i></a>
+            <!-- <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-youtube-play"></i></a> -->
             <a href="#"><i class="fa fa-instagram"></i></a>
         </div>
     </div>
@@ -82,32 +141,20 @@
                     <nav class="nav-menu">
                         <ul>
                             <li class="active"><a href="./index.html">Home</a></li>
-                            <!-- <li><a href="">Services</a></li> -->
                             <li><a href="#staffs">Our Staffs</a></li>
-                            <!-- <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./about-us.html">About us</a></li>
-                                    <li><a href="./class-timetable.html">Classes timetable</a></li>
-                                    <li><a href="./bmi-calculator.html">Bmi calculate</a></li>
-                                    <li><a href="./team.html">Our team</a></li>
-                                    <li><a href="./gallery.html">Gallery</a></li>
-                                    <li><a href="./blog.html">Our blog</a></li>
-                                    <li><a href="./404.html">404</a></li>
-                                </ul>
-                            </li> -->
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3">
                     <div class="top-option">
-                        <div class="to-search search-switch">
+                        <!-- <div class="to-search search-switch">
                             <i class="fa fa-search"></i>
-                        </div>
+                        </div> -->
                         <div class="to-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <!-- <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a> -->
                             <a href="#"><i class="fa fa-instagram"></i></a>
                         </div>
                     </div>
@@ -120,8 +167,6 @@
     </header>
     <!-- Header End -->
 
-    
-
     <!-- Hero Section Begin -->
     <section class="hero-section">
         <div class="hs-slider owl-carousel">
@@ -132,8 +177,8 @@
                             <div class="hi-text">
                                 <span>Relax and Rejuvenate</span>
                                 <h1>Enjoy <strong>Professional Massage</strong> Services</h1>
-                                <a href="https://wa.me/971547367357" class="primary-btn"><i style="font-size: 20px;margin-inline: 5px;" class="fa fa-whatsapp" aria-hidden="true"></i>Whatsapp</a>
-                                <a href="tel:+971547367357" class="primary-btn btn-normal call-btn"><i style="font-size: 20px;margin-inline: 5px;" class="fa fa-phone" aria-hidden="true"></i>Call Now</a>         
+                                <a style="background-color: #25D366;" href="https://wa.me/971547367357" class="primary-btn"><i style="font-size: 20px;margin-inline: 5px;" class="fa fa-whatsapp" aria-hidden="true"></i>Whatsapp</a>
+                                <a style="background-color: #007bff;" href="tel:+971547367357" class="primary-btn"><i style="font-size: 20px;margin-inline: 5px;" class="fa fa-phone" aria-hidden="true"></i>Call Now</a>
                             </div>
                         </div>
                     </div>
@@ -146,7 +191,8 @@
                             <div class="hi-text">
                                 <span>Revitalize Your Body</span>
                                 <h1>Feel <strong>Renewed</strong> and Energized</h1>
-                                <a href="#" class="primary-btn">Get info</a>
+                                <a style="background-color: #25D366;" href="https://wa.me/971547367357" class="primary-btn"><i style="font-size: 20px;margin-inline: 5px;" class="fa fa-whatsapp" aria-hidden="true"></i>Whatsapp</a>
+                                <a style="background-color: #007bff;" href="tel:+971547367357" class="primary-btn"><i style="font-size: 20px;margin-inline: 5px;" class="fa fa-phone" aria-hidden="true"></i>Call Now</a>
                             </div>
                         </div>
                     </div>
@@ -165,8 +211,8 @@
                         <div class="section-title">
                             <span>Meet Our Staffs</span>
                             <h2>EXPERIENCED PROFESSIONALS</h2>
-                        </div>                        
-                        <a href="#" class="primary-btn btn-normal appoinment-btn">appointment</a>
+                        </div>
+                        <a href="https://wa.me/971547367357" class="primary-btn btn-normal appoinment-btn">appointment</a>
                     </div>
                 </div>
             </div>
@@ -176,7 +222,7 @@
                         <div class="ts-item set-bg" data-setbg="img/staffs/zara.jpg">
                             <div class="ts_text">
                                 <h4>Zara</h4>
-                                <span>Pakisthan</span>
+                                <span>Pakistan</span>
                             </div>
                         </div>
                     </div>
@@ -200,7 +246,7 @@
                         <div class="ts-item set-bg" data-setbg="img/staffs/mega-indonesia.jpg">
                             <div class="ts_text">
                                 <h4>Mega</h4>
-                                <span>Indonasia</span>
+                                <span>Indonesia</span>
                             </div>
                         </div>
                     </div>
@@ -270,251 +316,95 @@
         </div>
     </section>
 
+    <!-- Search model Begin -->
+    <!-- <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div> -->
+    <!-- Search model end -->
 
-    <!-- ChoseUs Section End -->
+    <!-- Popup Begin -->
+    <div id="popup-overlay" class="popup-overlay hidden">
+        <div class="popup">
+            <button class="close-btn" onclick="closePopup()">&times;</button>
+            <div class="buttons">
+                <a style="background-color: #25D366;" href="https://wa.me/971547367357" class="primary-btn"><i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</a>
+                <a style="background-color: #007bff;" href="tel:+971547367357" class="primary-btn"><i class="fa fa-phone" aria-hidden="true"></i> Call Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- Popup End -->
 
-    <!-- Classes Section Begin -->
-    <!-- <section class="classes-section spad">
+    <!-- Contact Section Begin -->
+    <section id="contact" class="contact-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>Our Classes</span>
-                        <h2>WHAT WE CAN OFFER</h2>
+                <div class="col-lg-6">
+                    <div class="section-title contact-title">
+                        <span>Contact Us</span>
+                        <h2>GET IN TOUCH</h2>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="class-item">
-                        <div class="ci-pic">
-                            <img src="img/classes/class-1.jpg" alt="">
+                    <div class="contact-widget">
+                        <div class="cw-text">
+                            <i class="fa fa-map-marker"></i>
+                            <p>Room No. 709, 7th Floor, Sky Tower, Al Nuaimia 2 ,<br/> Ajman, United Arab Emirates</p>
                         </div>
-                        <div class="ci-text">
-                            <span>STRENGTH</span>
-                            <h5>Weightlifting</h5>
-                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                        <div class="cw-text">
+                            <i class="fa fa-mobile"></i>
+                            <ul>
+                                <li>+971 54 736 7357</li>
+                            </ul>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="class-item">
-                        <div class="ci-pic">
-                            <img src="img/classes/class-2.jpg" alt="">
-                        </div>
-                        <div class="ci-text">
-                            <span>Cardio</span>
-                            <h5>Indoor cycling</h5>
-                            <a href="#"><i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="class-item">
-                        <div class="ci-pic">
-                            <img src="img/classes/class-3.jpg" alt="">
-                        </div>
-                        <div class="ci-text">
-                            <span>STRENGTH</span>
-                            <h5>Kettlebell power</h5>
-                            <a href="#"><i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="class-item">
-                        <div class="ci-pic">
-                            <img src="img/classes/class-4.jpg" alt="">
-                        </div>
-                        <div class="ci-text">
-                            <span>Cardio</span>
-                            <h4>Indoor cycling</h4>
-                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                        <div class="cw-text email">
+                            <i class="fa fa-envelope"></i>
+                            <p>qalbspa@gmail.com</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="class-item">
-                        <div class="ci-pic">
-                            <img src="img/classes/class-5.jpg" alt="">
-                        </div>
-                        <div class="ci-text">
-                            <span>Training</span>
-                            <h4>Boxing</h4>
-                            <a href="#"><i class="fa fa-angle-right"></i></a>
-                        </div>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.445510162005!2d55.44857917623797!3d25.38989372386719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f599b6377c59b%3A0x304cb25a427bc786!2sQalb%20spa!5e0!3m2!1sen!2sin!4v1720039769481!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12087.069761554938!2d-74.2175599360452!3d40.767139456514954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c254b5958982c3%3A0xb6ab3931055a2612!2sEast%20Orange%2C%20NJ%2C%20USA!5e0!3m2!1sen!2sbd!4v1581710470843!5m2!1sen!2sbd"
+                            height="450" style="border:0;" allowfullscreen=""></iframe> -->
                     </div>
+                    <!-- <div class="leave-comment">
+                        <form action="#">
+                            <input type="text" placeholder="Name">
+                            <input type="text" placeholder="Email">
+                            <input type="text" placeholder="Website">
+                            <textarea placeholder="Comment"></textarea>
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div> -->
                 </div>
             </div>
+            
         </div>
-    </section> -->
-    <!-- ChoseUs Section End -->
-
-    <!-- Banner Section Begin -->
-    <!-- <section class="banner-section set-bg" data-setbg="img/banner-bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="bs-text">
-                        <h2>registration now to get more deals</h2>
-                        <div class="bt-tips">Where health, beauty and fitness meet.</div>
-                        <a href="#" class="primary-btn  btn-normal">Appointment</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Banner Section End -->
-
-    <!-- Pricing Section Begin -->
-    <!-- <section class="pricing-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>Our Plan</span>
-                        <h2>Choose your pricing plan</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-8">
-                    <div class="ps-item">
-                        <h3>Class drop-in</h3>
-                        <div class="pi-price">
-                            <h2>$ 39.0</h2>
-                            <span>SINGLE CLASS</span>
-                        </div>
-                        <ul>
-                            <li>Free riding</li>
-                            <li>Unlimited equipments</li>
-                            <li>Personal trainer</li>
-                            <li>Weight losing classes</li>
-                            <li>Month to mouth</li>
-                            <li>No time restriction</li>
-                        </ul>
-                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
-                        <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-8">
-                    <div class="ps-item">
-                        <h3>12 Month unlimited</h3>
-                        <div class="pi-price">
-                            <h2>$ 99.0</h2>
-                            <span>SINGLE CLASS</span>
-                        </div>
-                        <ul>
-                            <li>Free riding</li>
-                            <li>Unlimited equipments</li>
-                            <li>Personal trainer</li>
-                            <li>Weight losing classes</li>
-                            <li>Month to mouth</li>
-                            <li>No time restriction</li>
-                        </ul>
-                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
-                        <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-8">
-                    <div class="ps-item">
-                        <h3>6 Month unlimited</h3>
-                        <div class="pi-price">
-                            <h2>$ 59.0</h2>
-                            <span>SINGLE CLASS</span>
-                        </div>
-                        <ul>
-                            <li>Free riding</li>
-                            <li>Unlimited equipments</li>
-                            <li>Personal trainer</li>
-                            <li>Weight losing classes</li>
-                            <li>Month to mouth</li>
-                            <li>No time restriction</li>
-                        </ul>
-                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
-                        <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Pricing Section End -->
-
-    <!-- Gallery Section Begin -->
-    <!-- <div class="gallery-section">
-        <div class="gallery">
-            <div class="grid-sizer"></div>
-            <div class="gs-item grid-wide set-bg" data-setbg="img/gallery/gallery-1.jpg">
-                <a href="img/gallery/gallery-1.jpg" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
-            </div>
-            <div class="gs-item set-bg" data-setbg="img/gallery/gallery-2.jpg">
-                <a href="img/gallery/gallery-2.jpg" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
-            </div>
-            <div class="gs-item set-bg" data-setbg="img/gallery/gallery-3.jpg">
-                <a href="img/gallery/gallery-3.jpg" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
-            </div>
-            <div class="gs-item set-bg" data-setbg="img/gallery/gallery-4.jpg">
-                <a href="img/gallery/gallery-4.jpg" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
-            </div>
-            <div class="gs-item set-bg" data-setbg="img/gallery/gallery-5.jpg">
-                <a href="img/gallery/gallery-5.jpg" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
-            </div>
-            <div class="gs-item grid-wide set-bg" data-setbg="img/gallery/gallery-6.jpg">
-                <a href="img/gallery/gallery-6.jpg" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
-            </div>
-        </div>
-    </div> -->
-    <!-- Gallery Section End -->
-
-    
-
-    <!-- Get In Touch Section Begin -->
-    <!-- <div class="gettouch-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="gt-text">
-                        <i class="fa fa-map-marker"></i>
-                        <p>333 Middle Winchendon Rd, Rindge,<br/> NH 03461</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="gt-text">
-                        <i class="fa fa-mobile"></i>
-                        <ul>
-                            <li>125-711-811</li>
-                            <li>125-668-886</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="gt-text email">
-                        <i class="fa fa-envelope"></i>
-                        <p>Support.gymcenter@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Get In Touch Section End -->
+    </section>
+    <!-- Contact Section End -->
 
     <!-- Footer Section Begin -->
-    <!-- <section class="footer-section">
+    <section class="footer-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="fs-about">
                         <div class="fa-logo">
-                            <a href="#"><img src="img/logo.png" alt=""></a>
+                            <a href="#"><img width="60%" height="60%" src="img/qalb-logo.png" alt=""></a>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore dolore magna aliqua endisse ultrices gravida lorem.</p>
+                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore dolore magna aliqua endisse ultrices gravida lorem.</p> -->
                         <div class="fa-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
+                            <!-- <a href="#"><i class="fa fa-youtube-play"></i></a> -->
                             <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa  fa-envelope-o"></i></a>
+                            <!-- <a href="#"><i class="fa  fa-envelope-o"></i></a> -->
                         </div>
                     </div>
                 </div>
@@ -522,25 +412,14 @@
                     <div class="fs-widget">
                         <h4>Useful links</h4>
                         <ul>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Classes</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="">Home</a></li>
+                            <li><a href="#staffs">Staffs</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-6">
-                    <div class="fs-widget">
-                        <h4>Support</h4>
-                        <ul>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">My account</a></li>
-                            <li><a href="#">Subscribe</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
+                
+                <!-- <div class="col-lg-4 col-md-6">
                     <div class="fs-widget">
                         <h4>Tips & Guides</h4>
                         <div class="fw-recent">
@@ -558,31 +437,17 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="copyright-text">
-                        <p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- Footer Section End -->
-
-    <!-- Search model Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search model end -->
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -593,8 +458,19 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        function showPopup() {
+            document.getElementById('popup-overlay').classList.remove('hidden');
+        }
 
+        function closePopup() {
+            document.getElementById('popup-overlay').classList.add('hidden');
+        }
 
+        window.onload = function() {
+            setTimeout(showPopup, 2000);
+        };
+    </script>
 
 </body>
 
